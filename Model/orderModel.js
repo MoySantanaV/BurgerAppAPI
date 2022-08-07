@@ -9,11 +9,7 @@ const orderSchema = new mongoose.Schema({
         required: true,
         type: []
     }
-    ,
-    isComplete: {
-        required: true,
-        type: Boolean
-    }
+
 })
 
 module.exports = mongoose.model('OrdersSchema', orderSchema)

@@ -9,12 +9,13 @@ module.exports = router;
 
 
 router.post('/postProduct', async (req, res) => {
-    const data = new ProductSchema({
-        name: req.body.name,
-        price: req.body.price,
-        
-    })
+
     try {
+        const data = new ProductSchema({
+            name: req.body.name,
+            price: req.body.price,
+            
+        })
         const dataToSave = await data.save();
         res.status(200).json(dataToSave)
     }
@@ -24,12 +25,13 @@ router.post('/postProduct', async (req, res) => {
 })
 
 router.post('/postOrder', async (req, res) => {
-    const data = new OrderSchema({
-        clientName: req.body.clientName,
-        productsOrdered: req.body.productsOrdered,
-        isComplete: req.body.isComplete
-    })
+    
     try {
+        const data = new OrderSchema({
+            clientName: req.body.clientName,
+            productsOrdered: req.body.productsOrdered,
+            isComplete: req.body.isComplete
+        })
         const dataToSave = await data.save();
         res.status(200).json(dataToSave)
     }
@@ -39,12 +41,13 @@ router.post('/postOrder', async (req, res) => {
 })
 
 router.post('/postRecord', async (req, res) => {
-    const data = new RecordSchema({
-        date: req.body.date,
-        ordersRecorded: req.body.ordersRecorded,
-        price: req.body.price
-    })
+    
     try {
+        const data = new RecordSchema({
+            date: req.body.date,
+            ordersRecorded: req.body.ordersRecorded,
+            price: req.body.price
+        })
         const dataToSave = await data.save();
         res.status(200).json(dataToSave)
     }
@@ -119,6 +122,7 @@ router.get('/getOneRecord/:id', async (req, res) => {
 
 
 router.patch('/updateProduct/:id', async (req, res) => {
+    
     try {
         const id = req.params.id;
         const updatedData = req.body;
@@ -171,6 +175,7 @@ router.patch('/updateRecord/:id', async (req, res) => {
 
 
 router.delete('/deleteProduct/:id', async (req, res) => {
+    
     try {
         const id = req.params.id;
         const data = await ProductSchema.findByIdAndDelete(id)
@@ -182,6 +187,7 @@ router.delete('/deleteProduct/:id', async (req, res) => {
 })
 
 router.delete('/deleteOrder/:id', async (req, res) => {
+
     try {
         const id = req.params.id;
         const data = await OrderSchema.findByIdAndDelete(id)

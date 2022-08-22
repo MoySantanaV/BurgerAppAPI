@@ -21,7 +21,9 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors({origin:'*'}))
+app.use(cors({
+    origin: '*'
+}))
 app.listen(4000, () => {
     console.log(`Server Started at ${4000}`)
 })

@@ -8,8 +8,7 @@ const recordSchema = new mongoose.Schema({
     ordersRecorded: {
         required: true,
         type: []
-    }
-    ,
+    },
     price: {
         required: true,
         type: Number
@@ -17,5 +16,3 @@ const recordSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('RecordsSchema', recordSchema)
-
-

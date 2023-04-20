@@ -1,13 +1,5 @@
 {
-    "functions": {
-      "index.js": {
-        "runtime": "vercel-node@19.6.0"
-      }
-    },
-    "rewrites": [
-      {
-        "source": "/api/(.*)",
-        "destination": "/api/index.js"
-      }
-    ]
+    "rewrites": [{
+      "source": "/api/(.*)", "destination": "/api/index.js"
+    }]
   }

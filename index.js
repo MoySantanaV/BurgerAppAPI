@@ -24,6 +24,11 @@ app.use(express.json());
 app.use(cors({
     origin: '*'
 }))
+
+app.get("/", (req,res)=>{
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.send("server working");
+    });
 app.listen(4000, () => {
     console.log(`Server Started at ${4000}`)
 })

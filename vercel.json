@@ -1,7 +1,7 @@
 {
     "functions": {
       "index.js": {
-        "runtime": "vercel-node@1.16.0"
+        "runtime": "vercel-node@19.6.0"
       }
     },
     "rewrites": [
